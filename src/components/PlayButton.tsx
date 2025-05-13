@@ -5,20 +5,19 @@ interface PlayButtonProps {
 }
 
 const PlayButton: React.FC<PlayButtonProps> = ({ songId }) => {
-  const { setSongId } = usePlayer();
+  const { setSongId, togglePlay } = usePlayer();
 
   const handlePlay = () => {
-    console.log("Play Button Clicked - Song ID:", songId);
     setSongId(songId);
-    console.log(
-      "Current Song in Local Storage:",
-      localStorage.getItem("currentSong")
-    );
+    togglePlay();
   };
 
   return (
-    <button className="" onClick={handlePlay}>
-      ▶
+    <button
+      className="mt-4 w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
+      onClick={handlePlay}
+    >
+      ▶ Play
     </button>
   );
 };

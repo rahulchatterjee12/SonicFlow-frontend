@@ -30,12 +30,7 @@ const SongCard: React.FC<SongCardProps> = ({
       <div className="p-4">
         <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
         <p className="text-sm text-gray-600">{artist}</p>
-        <button
-          onClick={() => onPlay(id)}
-          className="mt-4 w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
-        >
-          ▶ Play
-        </button>
+
         <PlayButton songId={id} />
       </div>
     </motion.div>
