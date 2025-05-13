@@ -24,7 +24,11 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
         localStorage.setItem("access", response.access);
         localStorage.setItem("refresh", response.refresh);
       } else {
-        const response = await registerUser({ username: email, password });
+        const response = await registerUser({
+          username: email,
+          email,
+          password,
+        });
         localStorage.setItem("access", response.access);
         localStorage.setItem("refresh", response.refresh);
       }
